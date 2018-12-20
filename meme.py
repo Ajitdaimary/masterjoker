@@ -14,7 +14,15 @@ import requests
 import json
 import aiohttp
 
-client = commands.Bot(description="Here is some command for you", command_prefix=commands.when_mentioned_or("mk!"), pm_help = False)
+
+
+
+Forbidden= discord.Embed(title="Permission Denied", description="1) Please check whether you have permission to perform this action or not. \n2) Please check whether my role has permission to perform this action in this channel or not. \n3) Please check my role position.", color=0x00ff00)
+client = commands.Bot(description="masterjoker Official Bot", command_prefix=commands.when_mentioned_or("mk!"), pm_help = True)
+client.remove_command('help')
+
+
+
 
 @client.event
 async def on_ready():
@@ -23,6 +31,24 @@ async def on_ready():
 	print('--------')
 	print('Started Meme king') #add_your_bot_name_here
 	return await client.change_presence(game=discord.Game(name='meme king | mk!help')) #add_your_bot_status_here
+
+
+
+@client.command(pass_context = True)
+async def help(ctx):
+    if ctx.message.author.bot:
+      return
+    else:
+      author = ctx.message.author
+      r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+      embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
+      embed.set_author(name='💁Help')
+      embed.add_field(name = '😁commands,',value ='mk!tweet <name><text>, mk!lovedetect @user1@user2, mk!ping, mk!setupwelcome, mk!virus @user<text>, mk!meme, mk!pikachu,',inline = False)
+      dmmessage = await client.send_message(author,embed=embed)
+      await client.say('Check your direct messages')
+ 
+
+
 
 
 
@@ -224,7 +250,7 @@ async def on_member_join(member):
 
 
 @client.command(pass_context = True)
-async def boobs(ctx):
+async def pikachu(ctx):
     choices = ['https://cdn.discordapp.com/attachments/524952935311081473/525264291985752075/giphy.gif',]
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
     embed = discord.Embed(title='boobs', color = discord.Color((r << 16) + (g << 8) + b))
