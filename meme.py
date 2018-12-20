@@ -206,7 +206,7 @@ async def on_member_join(member):
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Welcome message')
     embed.add_field(name = '__Welcome to Our Server__',value ='**Thanks for Joining our Server Hope you enjoy please respect all members and staff.**',inline = False)
-    embed.set_image(url = 'https://cdn.discordapp.com/attachments/520159870448566287/524894568072609816/youre_welcome_obama.gif')
+    embed.set_image(url = 'https://cdn.discordapp.com/attachments/524952935311081473/525252450526167063/200w_s.gif')
     await client.send_message(member,embed=embed)
     print("Sent message to " + member.name)
     channel = discord.utils.get(client.get_all_channels(), server__name='bysoyal2', name='★彡-welcome-彡★')
@@ -214,7 +214,7 @@ async def on_member_join(member):
     embed = discord.Embed(title=f'Welcome {member.name} to {member.server.name}', description='Do not forget to check Rules and never try to break any one of them', color = discord.Color((r << 16) + (g << 8) + b))
     embed.add_field(name='__Thanks for joining__', value='**Hope you will be active here.**', inline=True)
     embed.add_field(name='Your join position is', value=member.joined_at)
-    embed.set_image(url = 'https://cdn.discordapp.com/attachments/520159870448566287/524894568072609816/youre_welcome_obama.gif')
+    embed.set_image(url = 'https://cdn.discordapp.com/attachments/524952935311081473/525252450526167063/200w_s.gif')
     embed.set_thumbnail(url=member.avatar_url)
     await client.send_message(channel, embed=embed)	
 
