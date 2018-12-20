@@ -41,7 +41,7 @@ async def tweet(ctx, usernamename:str, *, txt:str):
 		
 	
 @client.command(pass_context = True)
-@commands.has_permissions(mamber = True)
+@commands.has_permissions(everyone = True)
 async def dm(ctx, user: discord.Member, *, msg: str):
     try:
         await client.send_message(user, msg)
