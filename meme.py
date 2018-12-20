@@ -37,6 +37,21 @@ async def tweet(ctx, usernamename:str, *, txt:str):
             embed.title = "{} twitted: {}".format(usernamename, txt)
             await client.say(embed=embed)
 
+
+		
+	
+@client.command(pass_context = True)
+@commands.has_permissions(administrator = True)
+async def dm(ctx, user: discord.Member, *, msg: str):
+    try:
+        await client.send_message(user, msg)
+        await client.delete_message(ctx.message)          
+        await client.say("Success! Your DM has made it! :white_check_mark: ")
+    except discord.ext.commands.MissingPermissions:
+        await client.say("Aw, come on! You thought you could get away with DM'ing people without permissions.")
+    except:
+        await client.say("Error :x:. Make sure your message is shaped in this way: ^dm [tag person] [msg]")
+	
 		
 		
 @client.command(pass_context=True)
