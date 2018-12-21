@@ -217,7 +217,7 @@ async def virus(ctx,user: discord.Member=None,*,hack=None):
 
 @client.command(pass_context = True)
 async def meme(ctx):
-    choices = ['http://images3.memedroid.com/images/UPLOADED55/5c15b0dd0f6d0.jpeg,']
+    choices = ['http://images3.memedroid.com/images/UPLOADED7/57f1f9802e521.jpeg,']
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
     embed = discord.Embed(title='Meme', description=':upside_down:', color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/520159870448566287/520829749095038977/pubg.png') 
